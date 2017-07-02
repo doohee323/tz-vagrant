@@ -59,7 +59,7 @@ cd /vagrant/resources/mysql
 #passwd123
 
 # import
-mysql -u tzuser -h 192.168.82.170 -p tz_dev < tz_dev.sql 
+#mysql -u tzuser -h 192.168.82.170 -p tz_dev < tz_dev.sql 
 #passwd123
 
 exit 0

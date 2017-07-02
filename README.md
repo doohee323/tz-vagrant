@@ -16,6 +16,12 @@ install a Tz server with nginx, maven on ubuntu 16.04.
 	git clone https://github.com/doohee323/tz-vagrant.git
 	cd tz-vagrant
 	bash build.sh
+
+	# import db
+	vagrant ssh	
+	cd /vagrant/resources/mysql
+	mysql -u tzuser -h 192.168.82.170 -p tz_dev < tz_dev.sql 
+	#passwd123
 ```
 
 - Test
