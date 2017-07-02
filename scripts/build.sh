@@ -2,6 +2,8 @@
 
 set -x
 
+export PROJ_DIR=/vagrant
+
 sudo chown -Rf tomcat:tomcat /opt/tomcat
 sudo chmod -Rf 777 /opt/tomcat/webapps
 sudo chmod -Rf 777 /opt/tomcat/logs

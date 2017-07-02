@@ -164,6 +164,9 @@ sudo systemctl start tomcat
 #sudo systemctl stop tomcat
 #sudo systemctl status tomcat
 
+# first build
+su - vagrant -c "/bin/bash /vagrant/scripts/build.sh"
+
 #curl http://192.168.82.170:8080
 
 exit 0

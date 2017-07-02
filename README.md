@@ -29,6 +29,13 @@ install a Tz server with nginx, maven on ubuntu 16.04.
 	http://dev.tz.com/#!/login	
 ```
 
+- Build
+```
+	vagrant ssh
+	build	# build war
+	deploy	# build ui
+```
+
 - Restart services
 ```
 	vagrant ssh
