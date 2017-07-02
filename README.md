@@ -26,7 +26,7 @@ install a Tz server with nginx, maven on ubuntu 16.04.
 
 - Test
 ```
-	http://dev.tz.com	
+	http://dev.tz.com/#!/login	
 ```
 
 - Restart services
