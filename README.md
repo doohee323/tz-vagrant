@@ -54,3 +54,4 @@ install a Tz server with nginx, maven on ubuntu 16.04.
 	
 	tail -f /var/log/nginx/error.log
 ```
+test123
