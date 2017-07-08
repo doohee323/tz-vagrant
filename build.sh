@@ -2,9 +2,9 @@
 
 set -x
 
-if [ ! -d "tz-spring-boot" ]; then
+if [ ! -d "tz-vagrant" ]; then
 	echo "run this on this folder!"
-	echo "git clone https://github.com/doohee323/tz-spring-boot.git"
+	echo "git clone https://github.com/doohee323/tz-vagrant.git"
 	exit -1
 fi
 
