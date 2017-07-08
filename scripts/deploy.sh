@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-sudo rsync -avP /vagrant/tz-vagrant/target/classes/ /opt/tomcat/webapps/ROOT/WEB-INF/classes/ 
-sudo rsync -avP /vagrant/tz-vagrant/target/view/ /opt/tomcat/webapps/ROOT/WEB-INF/view/ 
+sudo rsync -avP /vagrant/tz-spring-boot/target/classes/ /opt/tomcat/webapps/ROOT/WEB-INF/classes/ 
+sudo rsync -avP /vagrant/tz-spring-boot/target/view/ /opt/tomcat/webapps/ROOT/WEB-INF/view/ 
 sudo chown -Rf tomcat:tomcat /opt/tomcat/webapps/ROOT
 sudo chmod -Rf 777 /opt/tomcat/webapps/ROOT
 sudo chmod -Rf 777 /opt/tomcat/logs

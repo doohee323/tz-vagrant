@@ -3,14 +3,14 @@
 set -x
 
 export USER=vagrant  # for vagrant
-export PROJ_NAME=tz-vagrant
+export PROJ_NAME=tz-spring-boot
 export HOME_DIR=/home/$USER
 export PROJ_DIR=/vagrant
 export SRC_DIR=/vagrant/resources  # for vagrant
 
 sudo sh -c "echo '' >> $HOME_DIR/.bashrc"
 sudo sh -c "echo 'export PATH=$PATH:.' >> $HOME_DIR/.bashrc"
-sudo sh -c "echo 'export PROJ_NAME=tz-vagrant' >> $HOME_DIR/.bashrc"
+sudo sh -c "echo 'export PROJ_NAME=tz-spring-boot' >> $HOME_DIR/.bashrc"
 sudo sh -c "echo 'export PROJ_DIR=/vagrant' >> $HOME_DIR/.bashrc"
 sudo sh -c "echo 'export HOME_DIR=$HOME_DIR' >> $HOME_DIR/.bashrc"
 sudo sh -c "echo 'export SRC_DIR=$SRC_DIR' >> $HOME_DIR/.bashrc"
@@ -85,7 +85,7 @@ sudo chown -R tomcat webapps/ work/ temp/ logs/
 ###############################################################
 
 sudo apt-get install systemd-services -y
-sudo cp -vp $SRC_DIR/tomcat/systemd/system/tomcat.service /etc/systemd/system/tomcat.service
+sudo cp -vp /vagrant/resources/tomcat/systemd/system/tomcat.service /etc/systemd/system/tomcat.service
 sudo chmod 664 /etc/systemd/system/tomcat.service
 
 sudo systemctl daemon-reload
@@ -122,7 +122,7 @@ sudo service iptables restart
 
 if [ ! -d "$PROJ_DIR/$PROJ_NAME" ]; then
 	git config --global credential.helper cache 'cache --timeout 360000'
-	#git clone https://github.com/doohee323/tz-vagrant.git
+	#git clone https://github.com/doohee323/tz-spring-boot.git
 	cd $PROJ_NAME
 else
 	cd $PROJ_NAME
@@ -143,6 +143,7 @@ sudo chown -R www-data:www-data /var/www/html/
 ###############################################################
 
 bash /vagrant/scripts/mysql.sh
+bash /vagrant/scripts/server.sh
 bash /vagrant/scripts/ui.sh
 
 cat <(crontab -l) <(echo "* * * * * sudo /bin/bash $PROJ_DIR/scripts/deploy.sh") | crontab -
